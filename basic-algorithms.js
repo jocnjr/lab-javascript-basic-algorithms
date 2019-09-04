@@ -116,6 +116,7 @@ console.log(`built in palindrome: ${palindrome(str)}`);
 
 // recursive solution for palindrome
 // with some control of spaces and special caracters
+
 const isPalindrome = (str) => {
   const cleanStr = str.replace(/[\W_]/g, '');
   const strLen = cleanStr.length;
@@ -133,6 +134,7 @@ const isPalindrome = (str) => {
 console.log(isPalindrome('madam'));
 console.log(isPalindrome('stack cats'));
 console.log(isPalindrome('taco cat'));
+console.log(isPalindrome('taco, c\'a\'t'));
 
 // Lorem Ipsum
 
@@ -155,7 +157,7 @@ console.log(`using regex the lorem ipsum paragraphs have ${loremIpsum.match(/\S+
 let etCount = 0;
 let loremArr = loremIpsum.split(' ');
 for (let x = 0; x < loremArr.length; x++) {
-  if (loremArr[x] === 'et') {
+  if (loremArr[x] === 'et' || loremArr[x] === 'et,') {
     etCount++;
   }
 }
@@ -165,4 +167,4 @@ console.log(`and ${etCount} 'et' occurrences.`);
 // 'et' occurrences
 // regex approach
 
-console.log(`and ${loremIpsum.match(/\set\s/g).length} 'et' occurrences with regex.`);
+console.log(`and ${loremIpsum.match(/\set[^A-Za-z]/g).length} 'et' occurrences with regex.`);
