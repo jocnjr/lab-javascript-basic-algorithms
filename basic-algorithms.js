@@ -47,6 +47,8 @@ Make your program count the number of times the latin word 'et' appears
 
 */
 
+console.log('yo!');
+
 const hacker1 = "AJOC";
 const hacker2 = 'Guilherme';
 
@@ -100,7 +102,7 @@ const lexicalNames = (name1, name2) => {
   };
 };
 
-lexicalNames(hacker1,hacker2);
+lexicalNames(hacker1, hacker2);
 
 // Palindrome
 
@@ -121,13 +123,13 @@ const isPalindrome = (str) => {
   const cleanStr = str.replace(/[\W_]/g, '');
   const strLen = cleanStr.length;
   if (strLen === 0 || strLen === 1) {
-      return true;
+    return true;
   }
-  
+
   if (cleanStr[0] === cleanStr[strLen - 1]) {
-      return isPalindrome( cleanStr.slice(1, strLen - 1) );
+    return isPalindrome(cleanStr.slice(1, strLen - 1));
   }
-  
+
   return false;
 };
 
